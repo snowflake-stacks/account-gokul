@@ -1,4 +1,4 @@
-name: "Snowflake Terraform Demo Workflow"
+name: "CREATE TEST DB"
 
 on:
   push:
@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: snowflake-stacks/module-db
-          #token: ${{ secrets.my_pat }}
+        # with:
+        #   repository: snowflake-stacks/module-db
+        #   #token: ${{ secrets.my_pat }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
