@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
         with:
-          repository: snowflake/module-db
+          repository: snowflake-stacks/module-db
           #token: ${{ secrets.my_pat }}
 
       - name: Setup Terraform
