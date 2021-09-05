@@ -1,28 +1,6 @@
-terraform {
-  required_providers {
-    snowflake = {
-      source  = "chanzuckerberg/snowflake"
-      version = "0.25.17"
-    }
-  }
+module "test_db" {
+  source = "git@github.com:snowflake-stacks/module-db.git"
 
-  backend "remote" {
-    organization = "tf-snowflake"
-
-    workspaces {
-      name = "create-test-db"
-    }
-  }
-}
-
-provider "snowflake" {
-  role     = "ACCOUNTADMIN"
-  account  = "fw68141"
-  region   = "eu-west-1"
-  username = "GOKULMURUGAN"
-}
-
-resource "snowflake_database" "demo_db" {
-  name    = "TEST_DB"
-  comment = "Database for Snowflake Terraform demo"
+  database_name    = var.database_name
+  database_comment = var.database_comment
 }
